@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\OpenMP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\OpenMP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\CUDA.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\CUDA.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MPI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\MPI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MonteCarloSimulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\MonteCarloSimulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\OpenMP.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\OpenMP.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MPI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\MPI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MonteCarloSimulation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\MonteCarloSimulation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\CUDA.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19FE9061-350C-4C41-BC91-3727628D3FDC}|MonteCarloSimulation\\MonteCarloSimulation.vcxproj|solutionrelative:MonteCarloSimulation\\CUDA.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 1332,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OpenMP.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\OpenMP.cpp",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\OpenMP.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\OpenMP.cpp",
+              "RelativeToolTip": "MonteCarloSimulation\\OpenMP.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-09T05:24:54.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OpenMP.h",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\OpenMP.h",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\OpenMP.h",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\OpenMP.h",
+              "RelativeToolTip": "MonteCarloSimulation\\OpenMP.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAB6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-09T05:24:51.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MPI.h",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MPI.h",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\MPI.h",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MPI.h",
+              "RelativeToolTip": "MonteCarloSimulation\\MPI.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-09T05:24:47.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CUDA.h",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\CUDA.h",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\CUDA.h",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\CUDA.h",
+              "RelativeToolTip": "MonteCarloSimulation\\CUDA.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-09T05:22:07.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CUDA.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\CUDA.cpp",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\CUDA.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\CUDA.cpp",
+              "RelativeToolTip": "MonteCarloSimulation\\CUDA.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-09T05:20:49.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MPI.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MPI.cpp",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\MPI.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MPI.cpp",
+              "RelativeToolTip": "MonteCarloSimulation\\MPI.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-09T03:31:46.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MonteCarloSimulation.h",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MonteCarloSimulation.h",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\MonteCarloSimulation.h",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MonteCarloSimulation.h",
+              "RelativeToolTip": "MonteCarloSimulation\\MonteCarloSimulation.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-09T02:57:57.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MonteCarloSimulation.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MonteCarloSimulation.cpp",
+              "RelativeDocumentMoniker": "MonteCarloSimulation\\MonteCarloSimulation.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloSimulation\\MonteCarloSimulation\\MonteCarloSimulation.cpp",
+              "RelativeToolTip": "MonteCarloSimulation\\MonteCarloSimulation.cpp",
+              "ViewState": "AgIAADcAAAAAAAAAAAAuwEcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-07T04:49:04.905Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
