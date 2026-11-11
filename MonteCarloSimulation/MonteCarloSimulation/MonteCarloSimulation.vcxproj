@@ -111,10 +111,14 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <AdditionalIncludeDirectories>"C:\Program Files (x86)\Microsoft SDKs\MPI\Include"</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>"C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>msmpi.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
@@ -139,16 +143,23 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CUDA.cpp" />
-    <ClCompile Include="MonteCarloSimulation.cpp" />
-    <ClCompile Include="MPI.cpp" />
-    <ClCompile Include="OpenMP.cpp" />
+    <ClCompile Include="CUDAImplementation.cpp" />
+    <ClCompile Include="MonteCarloSimulation.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files (x86)\Microsoft SDKs\MPI\Include"</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="MPIImplementation.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files (x86)\Microsoft SDKs\MPI\Include"</AdditionalIncludeDirectories>
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</OpenMPSupport>
+    </ClCompile>
+    <ClCompile Include="OpenMPImplementation.cpp" />
+    <ClCompile Include="Sequential.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CUDA.h" />
+    <ClInclude Include="CUDAImplementation.h" />
     <ClInclude Include="MonteCarloSimulation.h" />
-    <ClInclude Include="MPI.h" />
-    <ClInclude Include="OpenMP.h" />
+    <ClInclude Include="MPIImplementation.h" />
+    <ClInclude Include="OpenMPImplementation.h" />
+    <ClInclude Include="Sequential.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

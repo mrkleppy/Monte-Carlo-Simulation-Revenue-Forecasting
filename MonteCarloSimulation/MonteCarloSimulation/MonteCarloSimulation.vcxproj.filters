@@ -18,13 +18,16 @@
     <ClCompile Include="MonteCarloSimulation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OpenMP.cpp">
+    <ClCompile Include="OpenMPImplementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CUDA.cpp">
+    <ClCompile Include="CUDAImplementation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MPI.cpp">
+    <ClCompile Include="MPIImplementation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequential.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,13 +35,16 @@
     <ClInclude Include="MonteCarloSimulation.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenMP.h">
+    <ClInclude Include="OpenMPImplementation.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="CUDA.h">
+    <ClInclude Include="CUDAImplementation.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="MPI.h">
+    <ClInclude Include="MPIImplementation.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequential.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
