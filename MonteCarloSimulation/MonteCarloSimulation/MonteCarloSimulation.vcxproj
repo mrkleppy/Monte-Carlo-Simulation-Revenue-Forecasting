@@ -147,17 +147,12 @@
     <ClCompile Include="MonteCarloSimulation.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files (x86)\Microsoft SDKs\MPI\Include"</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="MPIImplementation.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files (x86)\Microsoft SDKs\MPI\Include"</AdditionalIncludeDirectories>
-      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</OpenMPSupport>
-    </ClCompile>
     <ClCompile Include="OpenMPImplementation.cpp" />
     <ClCompile Include="Sequential.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CUDAImplementation.h" />
     <ClInclude Include="MonteCarloSimulation.h" />
-    <ClInclude Include="MPIImplementation.h" />
     <ClInclude Include="OpenMPImplementation.h" />
     <ClInclude Include="Sequential.h" />
   </ItemGroup>
