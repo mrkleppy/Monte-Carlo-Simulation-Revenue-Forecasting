@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
+#include <sstream>
+#include <iomanip>
+#include <locale>
 #include <ctime>
 #include <cmath>
 #include <math.h>
-#include <mpi.h>
+
 #include "MonteCarloSimulation.h"
 #include "OpenMPImplementation.h"
 #include "CUDAImplementation.h"
-#include "MPIImplementation.h"
 
 void mainMenu() {
 	// Get the current time for display purposes
@@ -31,7 +34,11 @@ void mainMenu() {
 		printf("Monte Carlo Simulation for Four-Year Revenue Forecasting using Historical Growth\n");
 		
 		printf("\nChoose Parallel Program to compare with Sequential\n");
-		printf("1. OpenMP\n2. CUDA\n3. MPI\n0. Exit Program\nChoice: ");
+		printf("1. OpenMP\n");
+		printf("2. CUDA\n");
+		printf("0. Exit Program\n");
+		printf("Choice: ");
+		fflush(stdout);
 
 		if (scanf_s("%d", &choice) != 1) {
 			printf("\nInvalid input. Please enter an integer.\n");
@@ -43,14 +50,16 @@ void mainMenu() {
 			return;
 		}
 
-		if (choice < 1 || choice > 3) {
-			printf("\nPlease enter 1-3 or 0 to exit!\n");
+		if (choice < 1 || choice > 2) {
+			printf("\nPlease enter 1-2 or 0 to exit!\n");
 			continue;
 		}
 
 		// Previous Revenue Input
 		while (1) {
 			printf("\nEnter Annual Revenue for %d: ", latestRevenueYear);
+
+			fflush(stdout);
 
 			if (scanf_s("%Lf", &latestAnnualRevenue) != 1) {
 				printf("\nInvalid input. Please enter a long double.\n");
@@ -69,6 +78,8 @@ void mainMenu() {
 		while (1) {
 			printf("Enter Annual Revenue for %d: ", precedingRevenueYear);
 
+			fflush(stdout);
+
 			if (scanf_s("%Lf", &precedingAnnualRevenue) != 1) {
 				printf("\nInvalid input. Please enter a long double.\n");
 				return;
@@ -85,6 +96,7 @@ void mainMenu() {
 		// Identify the growth rate and volatility rate based on the two years of revenue
 		const double annualGrowthRate = findGrowthRate(latestAnnualRevenue, precedingAnnualRevenue); // How much the revenue has grown from the previous year to the current year
 		const double annualVolatilityRate = findVolatilityRate(latestAnnualRevenue, precedingAnnualRevenue); // How much the revenue has fluctuated from the previous year to the current year (the uncertainties)
+		
 		flush();
 
 		switch (choice) {
@@ -96,22 +108,15 @@ void mainMenu() {
 			CUDAParallel(latestAnnualRevenue, annualGrowthRate, annualVolatilityRate);
 			break;
 
-		case 3:
-			MPIParallel(latestAnnualRevenue, annualGrowthRate, annualVolatilityRate);
-			break;
-
 		}
 	}
 }
 
-int main(int argc, char* argv[]) {
-	MPI_Init(&argc, &argv);
-
+int main() {
 	srand((unsigned int)time(NULL)); // Seed the random number generator
 
-	mainMenu();
+	mainMenu(); // Call the main menu function
 
-	MPI_Finalize();
 	return 0;
 }
 
@@ -130,7 +135,7 @@ double findGrowthRate(long double latestRevenue, long double precedingRevenue) {
 double findVolatilityRate(long double latestRevenue, long double precedingRevenue) {
 	// Volatility is the standard deviation of the revenues
 	double volatilityRate = 0.0;
-	
+
 	// Mean formula
 	long double meanRevenue = (latestRevenue + precedingRevenue) / 2.0L;
 
@@ -166,26 +171,26 @@ long double oneSimulation(long double latestRevenue, double growthRate, double v
 	return revenueSimulated;
 }
 
-long double monteCarloSimulation(long double revenues[NUM_OF_STEPS]) {
-	// Monte Carlo Formula to find the revenue that is found
-	// Formula is
-	// 1/N (Sum of All Simulated Revenue in a year)
-	// 1/NUM_OF_STEPS * SUM(revenues)
-	long double sum = 0.0L;
-	long double revenueCurrent = 0.0;
-
-	for (long i = 0; i < NUM_OF_STEPS; i++) {
-		sum += revenues[i];
-	}
-
-	// Monte Carlo Formula
-	revenueCurrent = (1 / static_cast<long double>(NUM_OF_STEPS)) * sum;
-
-	return revenueCurrent;
-}
-
 // Prompt Helpers
 void flush() {
 	printf("\033[2J\033[H");
 	fflush(stdout);
+}
+
+string formatWithCommas(long double value, int decimalPlaces) {
+	ostringstream stream;
+
+	stream.imbue(locale::classic());
+	stream << fixed << setprecision(decimalPlaces) << value;
+	string formatted = stream.str();
+	size_t decimalPosition = formatted.find('.');
+	size_t position = decimalPosition == string::npos ? formatted.length() : decimalPosition;
+	size_t firstDigit = !formatted.empty() && formatted[0] == '-' ? 1 : 0;
+
+	while (position > firstDigit + 3) {
+		position -= 3;
+		formatted.insert(position, ",");
+	}
+
+	return formatted;
 }
