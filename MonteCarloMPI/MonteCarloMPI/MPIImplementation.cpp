@@ -132,8 +132,8 @@ void MPIParallel(long double latestAnnualRevenue, double annualGrowthRate, doubl
 		printf("Forecast years per scenario: %d\n", FORECAST_YEARS);
 		printf("MPI processes: %d\n", size);
 
-		printf("\nTs: %s%.6f seconds%s\n", ORANGE, Ts, RESET);
-		printf("Tp: %s%.6f seconds%s\n", ORANGE, Tp, RESET);
+		printf("\nSequential Time Taken: %s%.6f seconds%s\n", ORANGE, Ts, RESET);
+		printf("Parallel Time Taken: %s%.6f seconds%s\n", ORANGE, Tp, RESET);
 
 		double speedup = Ts / Tp;
 		double efficiency =

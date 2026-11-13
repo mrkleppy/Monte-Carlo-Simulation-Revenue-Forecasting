@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="MonteCarloMPI/MonteCarloMPI.vcxproj" />
+  <Project Path="MonteCarloMPI/MonteCarloMPI.vcxproj" Id="dfcad192-797d-4dba-8cfc-4384bf4f4f9f" />
 </Solution>
