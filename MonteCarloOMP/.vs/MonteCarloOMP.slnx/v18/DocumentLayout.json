@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\MonteCarloSimulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|solutionrelative:MonteCarloOMP\\MonteCarloSimulation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\MonteCarloSimulation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|solutionrelative:MonteCarloOMP\\MonteCarloSimulation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\OpenMPImplementation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|solutionrelative:MonteCarloOMP\\OpenMPImplementation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\OpenMPImplementation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|solutionrelative:MonteCarloOMP\\OpenMPImplementation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\Sequential.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|solutionrelative:MonteCarloOMP\\Sequential.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\Sequential.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AEAC106B-664F-424B-A0DB-3192E34FF03A}|MonteCarloOMP\\MonteCarloOMP.vcxproj|solutionrelative:MonteCarloOMP\\Sequential.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OpenMPImplementation.h",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\OpenMPImplementation.h",
+              "RelativeDocumentMoniker": "MonteCarloOMP\\OpenMPImplementation.h",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\OpenMPImplementation.h",
+              "RelativeToolTip": "MonteCarloOMP\\OpenMPImplementation.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-18T13:09:40.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OpenMPImplementation.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\OpenMPImplementation.cpp",
+              "RelativeDocumentMoniker": "MonteCarloOMP\\OpenMPImplementation.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\OpenMPImplementation.cpp",
+              "RelativeToolTip": "MonteCarloOMP\\OpenMPImplementation.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-18T13:09:31.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sequential.h",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\Sequential.h",
+              "RelativeDocumentMoniker": "MonteCarloOMP\\Sequential.h",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\Sequential.h",
+              "RelativeToolTip": "MonteCarloOMP\\Sequential.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-18T13:07:58.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Sequential.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\Sequential.cpp",
+              "RelativeDocumentMoniker": "MonteCarloOMP\\Sequential.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\Sequential.cpp",
+              "RelativeToolTip": "MonteCarloOMP\\Sequential.cpp",
+              "ViewState": "AgIAABQAAAAAAAAAAAA0wDIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-18T13:07:52.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MonteCarloSimulation.h",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\MonteCarloSimulation.h",
+              "RelativeDocumentMoniker": "MonteCarloOMP\\MonteCarloSimulation.h",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\MonteCarloSimulation.h",
+              "RelativeToolTip": "MonteCarloOMP\\MonteCarloSimulation.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-11-18T13:07:32.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MonteCarloSimulation.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\MonteCarloSimulation.cpp",
+              "RelativeDocumentMoniker": "MonteCarloOMP\\MonteCarloSimulation.cpp",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\MonteCarloOMP\\MonteCarloOMP\\MonteCarloSimulation.cpp",
+              "RelativeToolTip": "MonteCarloOMP\\MonteCarloSimulation.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-11-18T13:07:24.414Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MonteCarloCUDA/MonteCarloCUDA.vcxproj" Id="41340c23-dbaa-41bf-b52c-f069c6cff81c" />
+</Solution>
