@@ -28,53 +28,14 @@ void mainMenu() {
 	while (1) {
 		long double latestAnnualRevenue = 0.0L;
 		long double precedingAnnualRevenue = 0.0L;
-		int choice = 0;
 
-		printf("\n\nMonte Carlo Simulation for Four-Year Revenue Forecasting using Historical Growth\n");
+		flush();
 
-		printf("\nChoose Parallel Program to compare with Sequential\n");
-		printf("1. CUDA\n");
-		printf("0. Exit Program\n");
-		printf("Choice: ");
-		fflush(stdout);
-
-		if (scanf_s("%d", &choice) != 1) {
-			printf("\nInvalid input. Please enter an integer.\n");
-			return;
-		}
-
-		if (choice == 0) {
-			printf("\nExiting program...");
-			return;
-		}
-
-		if (choice < 1 || choice > 1) {
-			printf("\nPlease enter 1 or 0 to exit!\n");
-			continue;
-		}
+		printf("Monte Carlo Simulation for Four-Year Revenue Forecasting using Historical Growth\nUsing CUDA\n");
 
 		// Previous Revenue Input
 		while (1) {
-			printf("\nEnter Annual Revenue for %d: ", latestRevenueYear);
-
-			fflush(stdout);
-
-			if (scanf_s("%Lf", &latestAnnualRevenue) != 1) {
-				printf("\nInvalid input. Please enter a long double.\n");
-				return;
-			}
-
-			if (latestAnnualRevenue <= 0) {
-				printf("\nPlease enter an input larger than 0!\n");
-				continue;
-			}
-
-			break;
-		}
-
-		// Preceding Revenue Input
-		while (1) {
-			printf("Enter Annual Revenue for %d: ", precedingRevenueYear);
+			printf("\nEnter Annual Revenue for %d: ", precedingRevenueYear);
 
 			fflush(stdout);
 
@@ -91,18 +52,32 @@ void mainMenu() {
 			break;
 		}
 
+		// Preceding Revenue Input
+		while (1) {
+			printf("Enter Annual Revenue for %d: ", latestRevenueYear);
+
+			fflush(stdout);
+
+			if (scanf_s("%Lf", &latestAnnualRevenue) != 1) {
+				printf("\nInvalid input. Please enter a long double.\n");
+				return;
+			}
+
+			if (latestAnnualRevenue <= 0) {
+				printf("\nPlease enter an input larger than 0!\n");
+				continue;
+			}
+
+			break;
+		}
+
 		// Identify the growth rate and volatility rate based on the two years of revenue
 		const double annualGrowthRate = findGrowthRate(latestAnnualRevenue, precedingAnnualRevenue); // How much the revenue has grown from the previous year to the current year
 		const double annualVolatilityRate = findVolatilityRate(latestAnnualRevenue, precedingAnnualRevenue); // How much the revenue has fluctuated from the previous year to the current year (the uncertainties)
 
 		flush();
 
-		switch (choice) {
-		case 1:
-			CUDAParallel(latestAnnualRevenue, annualGrowthRate, annualVolatilityRate);
-			break;
-
-		}
+		CUDAParallel(latestAnnualRevenue, annualGrowthRate, annualVolatilityRate);
 	}
 }
 

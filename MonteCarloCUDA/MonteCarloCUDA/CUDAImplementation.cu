@@ -136,8 +136,8 @@ void CUDAParallel(long double latestAnnualRevenue, double annualGrowthRate, doub
 	printf("Number of Simulations: %s%lld%s\n\n", cGreen, (long long)NUM_OF_STEPS, cReset);
 
 	printf("Forecasted Revenues\n");
-	printf("----------------------------------------\n");
 	printf("Assumption: constant growth and uncertainty parameters.\n\n");
+	printf("-----------------------------------------------------------------------------------\n");
 
 	printf("%-11s", "Method");
 	for (int y = 0; y < FORECAST_YEARS; ++y) printf("| Year %-11d", firstYear + y);

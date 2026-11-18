@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="MonteCarloCUDA/MonteCarloCUDA.vcxproj" Id="2c75578b-d072-49b0-9c5a-77c9bf93d044" />
+  <Project Path="MonteCarloCUDA/MonteCarloCUDA.vcxproj" Id="41340c23-dbaa-41bf-b52c-f069c6cff81c" />
 </Solution>
