@@ -117,27 +117,25 @@ void MPIParallel(long double latestAnnualRevenue, double annualGrowthRate, doubl
 		printf("\n%-12s", "Sequential");
 
 		for (int year = 0; year < FORECAST_YEARS; ++year) {
-			printf(" | %sRM %16s%s", BLUE, formatWithCommas(sequentialResult.meanRevenue[year]).c_str(), RESET);
+			printf(" | RM %s%16s%s", BLUE, formatWithCommas(sequentialResult.meanRevenue[year]).c_str(), RESET);
 		}
 
 		printf("\n%-12s", "MPI");
 
 		for (int year = 0; year < FORECAST_YEARS; ++year) {
-			printf(" | %sRM %16s%s", BLUE, formatWithCommas(parallelResult.meanRevenue[year]).c_str(), RESET);
+			printf(" | RM %s%16s%s", BLUE, formatWithCommas(parallelResult.meanRevenue[year]).c_str(), RESET);
 		}
 
 		printf("\n\nPerformance Comparison\n");
 		printf("----------------------------------------\n");
-		printf("Scenarios: %lld\n", totalSimulations);
-		printf("Forecast years per scenario: %d\n", FORECAST_YEARS);
+		printf("Simulations (Steps): %lld\n", totalSimulations);
 		printf("MPI processes: %d\n", size);
 
-		printf("\nSequential Time Taken: %s%.6f seconds%s\n", ORANGE, Ts, RESET);
-		printf("Parallel Time Taken: %s%.6f seconds%s\n", ORANGE, Tp, RESET);
+		printf("\nTs: %s%.6f seconds%s\n", ORANGE, Ts, RESET);
+		printf("Tp: %s%.6f seconds%s\n", ORANGE, Tp, RESET);
 
 		double speedup = Ts / Tp;
-		double efficiency =
-			speedup / static_cast<double>(size);
+		double efficiency = speedup / static_cast<double>(size);
 
 		printf("Speedup: %s%.4f%s\n", LIME, speedup, RESET);
 		printf("Efficiency: %s%.2f%%%s\n", LIME, efficiency * 100.0, RESET);

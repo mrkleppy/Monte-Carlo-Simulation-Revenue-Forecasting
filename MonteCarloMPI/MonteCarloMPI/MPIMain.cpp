@@ -138,7 +138,7 @@ int main(int argc, char* argv[]) {
 			else {
 				printf("\nAnnual Growth Rate: %s%.4f%%%s\n", LIME, annualGrowthRate * 100.0, RESET);
 				printf("Annual Volatility Rate: %s%.4f%%%s\n", LIME, annualVolatilityRate * 100.0, RESET);
-				printf("Number of Simulations: %lld\n", static_cast<long long>(NUM_OF_STEPS));
+				printf("Number of Simulations: %s%lld%s\n", LIME, static_cast<long long>(NUM_OF_STEPS), RESET);
 			}
 		}
 	}
