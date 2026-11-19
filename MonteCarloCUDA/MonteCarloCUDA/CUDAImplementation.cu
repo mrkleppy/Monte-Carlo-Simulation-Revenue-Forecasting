@@ -11,16 +11,9 @@
 
 using namespace std;
 
-const int BLOCKS = 256; // Groups of threads, each block has 256 threads
-const int THREADS = 256; // Groups of simulations, each thread handles 256 simulations
+const int BLOCKS = 4; // Groups of threads, each block has n threads
+const int THREADS = 4; // Groups of simulations, each thread handles n simulations
 const int TOTAL_THREADS = BLOCKS * THREADS;
-
-// ANSI colours
-static const char* cReset = "\033[0m";
-static const char* cGreen = "\033[92m";
-static const char* cBlue = "\033[94m";
-static const char* cOrange = "\033[38;5;208m";
-static const char* cPink = "\033[95m";
 
 #define CHECK(call) do { cudaError_t e = (call); if (e != cudaSuccess) \
 	printf("CUDA error line %d: %s\n", __LINE__, cudaGetErrorString(e)); } while (0) // Macro to check CUDA calls
@@ -54,7 +47,7 @@ static void printRow(const char* method, const ForecastResult& r)
 {
 	printf("%-11s", method);
 	for (int y = 0; y < FORECAST_YEARS; ++y)
-		printf("| RM %s%12s%s ", cBlue, formatWithCommas(r.meanRevenue[y], 2).c_str(), cReset);
+		printf("| RM %s%12s%s ", BLUE, formatWithCommas(r.meanRevenue[y], 2).c_str(), RESET);
 	printf("\n");
 }
 
@@ -126,18 +119,17 @@ void CUDAParallel(long double latestAnnualRevenue, double annualGrowthRate, doub
 	printf("CUDA Threads Launched: %d (%d blocks x %d threads)\n\n",
 		TOTAL_THREADS, BLOCKS, THREADS);
 
-	printf("Annual Revenue for Year %d: %sRM %s%s\n", firstYear - 2, cPink,
-		formatWithCommas(precedingRevenue, 2).c_str(), cReset);
-	printf("Annual Revenue for Year %d: %sRM %s%s\n\n", firstYear - 1, cPink,
-		formatWithCommas(latestAnnualRevenue, 2).c_str(), cReset);
+	printf("Annual Revenue for Year %d: %sRM %s%s\n", firstYear - 2, MAGENTA,
+		formatWithCommas(precedingRevenue, 2).c_str(), RESET);
+	printf("Annual Revenue for Year %d: %sRM %s%s\n\n", firstYear - 1, MAGENTA,
+		formatWithCommas(latestAnnualRevenue, 2).c_str(), RESET);
 
-	printf("Annual Growth Rate: %s%.4f%%%s\n", cGreen, annualGrowthRate * 100.0, cReset);
-	printf("Annual Volatility Rate: %s%.4f%%%s\n", cGreen, annualVolatilityRate * 100.0, cReset);
-	printf("Number of Simulations: %s%lld%s\n\n", cGreen, (long long)NUM_OF_STEPS, cReset);
+	printf("Annual Growth Rate: %s%.4f%%%s\n", LIME, annualGrowthRate * 100.0, RESET);
+	printf("Annual Volatility Rate: %s%.4f%%%s\n", LIME, annualVolatilityRate * 100.0, RESET);
+	printf("Number of Simulations: %s%lld%s\n\n", LIME, (long long)NUM_OF_STEPS, RESET);
 
 	printf("Forecasted Revenues\n");
 	printf("Assumption: constant growth and uncertainty parameters.\n\n");
-	printf("-----------------------------------------------------------------------------------\n");
 
 	printf("%-11s", "Method");
 	for (int y = 0; y < FORECAST_YEARS; ++y) printf("| Year %-11d", firstYear + y);
@@ -147,13 +139,17 @@ void CUDAParallel(long double latestAnnualRevenue, double annualGrowthRate, doub
 
 	printf("\nPerformance Comparison\n");
 	printf("----------------------------------------\n");
-	printf("Scenarios: %lld\n", (long long)NUM_OF_STEPS);
-	printf("Forecast years per scenario: %d\n", FORECAST_YEARS);
+	printf("Simulations (Steps): %lld\n", (long long)NUM_OF_STEPS);
 	printf("CUDA threads: %d\n\n", TOTAL_THREADS);
 
-	printf("Ts: %s%.6f seconds%s\n", cOrange, seqSec, cReset);
-	printf("Tp: %s%.6f seconds%s\n", cOrange, gpuSec, cReset);
-	printf("Speedup: %s%.4f%s\n", cGreen, seqSec / gpuSec, cReset);
+	printf("Ts: %s%.6f seconds%s\n", ORANGE, seqSec, RESET);
+	printf("Tp: %s%.6f seconds%s\n", ORANGE, gpuSec, RESET);
+
+	double speedup = seqSec / gpuSec;
+	double efficiency = speedup / static_cast<double>(TOTAL_THREADS);
+
+	printf("Speedup: %s%.4f%s\n", LIME, seqSec / gpuSec, RESET);
+	printf("Efficiency: %s%.2f%%%s\n", LIME, efficiency * 100.0, RESET);
 
 	printf("\nPress Enter to continue...");
 	int ch;
