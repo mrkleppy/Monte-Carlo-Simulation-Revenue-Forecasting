@@ -77,7 +77,7 @@ void mainMenu() {
 
 		flush();
 
-		OpenMPParallel(latestAnnualRevenue, annualGrowthRate, annualVolatilityRate);
+		OpenMPParallel(latestAnnualRevenue, annualGrowthRate, annualVolatilityRate, latestRevenueYear + 1);
 	}
 }
 

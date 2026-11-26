@@ -4,6 +4,7 @@
 #define OpenMPImplementation
 
 // Jarrett
-void OpenMPParallel(long double latestAnnualRevenue, double annualGrowthRate, double annualVolatilityRate);
+void OpenMPParallel(long double latestAnnualRevenue, double annualGrowthRate, double annualVolatilityRate, int firstForecastYear);
+
 
 #endif
