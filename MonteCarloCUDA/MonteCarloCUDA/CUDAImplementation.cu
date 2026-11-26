@@ -3,6 +3,7 @@
 #include <chrono>
 #include <vector>
 #include <string>
+#include <random>
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 #include <curand_kernel.h>
@@ -19,12 +20,12 @@ const int TOTAL_THREADS = BLOCKS * THREADS;
 	printf("CUDA error line %d: %s\n", __LINE__, cudaGetErrorString(e)); } while (0) // Macro to check CUDA calls
 
 // Runs on the GPU. Every thread handles simulations tid and tid+TOTAL_THREADS
-__global__ void simulateKernel(double latest, double growth, double vol, double* sums) // Functions for every thread to run on the GPU
+__global__ void simulateKernel(double latest, double growth, double vol, double* sums, unsigned long long seed) // Functions for every thread to run on the GPU
 {
 	int tid = blockIdx.x * blockDim.x + threadIdx.x; // Unique thread ID with formala, block number * block size + thread number in block
 
 	curandState state;							// random number generator state
-	curand_init(1234ULL, tid, 0, &state);		// each thread gets its own random stream
+	curand_init(seed, tid, 0, &state);		// each thread gets its own random stream
 
 	double local[FORECAST_YEARS] = {};         // this thread's running total per year
 
@@ -53,6 +54,9 @@ static void printRow(const char* method, const ForecastResult& r)
 
 void CUDAParallel(long double latestAnnualRevenue, double annualGrowthRate, double annualVolatilityRate)
 {
+	static random_device rd; // Seed for random number generator
+	unsigned long long seed = rd(); // Generate a random seed for the simulation
+
 	time_t now = time(NULL);
 	tm lt = {};
 	localtime_s(&lt, &now);
@@ -82,8 +86,8 @@ void CUDAParallel(long double latestAnnualRevenue, double annualGrowthRate, doub
 	vector<double> hSums(FORECAST_YEARS * TOTAL_THREADS); // Reserve space on the CPU for the sums of all threads
 
 	cudaEventRecord(start); // Start timing
-	// Launch the kernel with <BLOCKS> blocks and <THREADS> threads per block, in this case using 256 blocks and 256 threads per block, for a total of 65536 threads
-	simulateKernel << <BLOCKS, THREADS >> > ((double)latestAnnualRevenue, annualGrowthRate, annualVolatilityRate, dSums);
+	// Launch the kernel with <BLOCKS> blocks and <THREADS> threads per block
+	simulateKernel << <BLOCKS, THREADS >> > ((double)latestAnnualRevenue, annualGrowthRate, annualVolatilityRate, dSums, seed);
 	// Check for errors during kernel launch and synchronize the device
 	CHECK(cudaGetLastError());
 	// Wait for the GPU to finish before accessing the results
