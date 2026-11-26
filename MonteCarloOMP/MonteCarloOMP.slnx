@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="MonteCarloOMP/MonteCarloOMP.vcxproj" />
+  <Project Path="MonteCarloOMP/MonteCarloOMP.vcxproj" Id="aeac106b-664f-424b-a0db-3192e34ff03a" />
 </Solution>
