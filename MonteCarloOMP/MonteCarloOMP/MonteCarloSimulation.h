@@ -10,7 +10,7 @@
 #define LIME "\033[1;32m"
 #define ORANGE "\033[38;5;208m"
 #define RESET "\x1b[0m"
-#define NUM_OF_STEPS 1000000
+#define NUM_OF_STEPS 100000
 #define FORECAST_YEARS 4
 
 using namespace std;

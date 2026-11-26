@@ -5,8 +5,26 @@
 #include "MonteCarloSimulation.h"
 #include "Sequential.h"
 
+const int OPENMP_THREADS = 16;
+
+static void printRow(const char* method, const ForecastResult& r)
+{
+    printf("%-11s", method);
+
+    for (int y = 0; y < FORECAST_YEARS; ++y) {
+        printf("| RM %s%12s%s ",
+            BLUE,
+            formatWithCommas(r.meanRevenue[y], 2).c_str(),
+            RESET);
+    }
+
+    printf("\n");
+}
+
 void OpenMPParallel(long double latestAnnualRevenue, double annualGrowthRate, double annualVolatilityRate, int firstForecastYear) {
 	const int steps = static_cast<int>(NUM_OF_STEPS);
+
+	long double precedingRevenue = latestAnnualRevenue / (1 + annualGrowthRate); // Calculate the preceding revenue based on the latest revenue and growth rate
 
 	// Sequential baseline(Ts)
 	double start = omp_get_wtime();
@@ -21,7 +39,7 @@ void OpenMPParallel(long double latestAnnualRevenue, double annualGrowthRate, do
 
 	start = omp_get_wtime();
 
-#pragma omp parallel num_threads(16)
+#pragma omp parallel num_threads(OPENMP_THREADS)
 	{
 		// Each thread gets its own random generator 
 		std::mt19937 gen(baseSeed + omp_get_thread_num());
@@ -60,44 +78,60 @@ void OpenMPParallel(long double latestAnnualRevenue, double annualGrowthRate, do
 	double Tp = omp_get_wtime() - start;
 
 	// Output 
-	printf("\nForecasted Revenues\n");
-	printf("Assumption: constant growth and uncertainty parameters.\n");
+	 printf("\n\nMonte Carlo Revenue Forecasting - OpenMP\n");
+    printf("----------------------------------------\n");
+    printf("Logical Processors: %d\n", omp_get_num_procs());
+    printf("OpenMP Threads Used: %d\n\n", threadsUsed);
 
-	printf("\n%-12s", "Method");
-	for (int y = 0; y < FORECAST_YEARS; ++y) {
-		printf(" | Year %-14d", firstForecastYear + y);
-	}
-	
-	printf("\n");
-	for (int i = 0; i < 105; ++i) {
-		printf("-");
-	}
+    printf("Annual Revenue for Year %d: %sRM %s%s\n",
+           firstForecastYear - 2, MAGENTA,
+           formatWithCommas(precedingRevenue, 2).c_str(), RESET);
 
-	printf("\n%-12s", "Sequential");
-	for (int y = 0; y < FORECAST_YEARS; ++y) {
-		printf(" | RM %s%16s%s", BLUE, formatWithCommas(sequentialResult.meanRevenue[y]).c_str(), RESET);
-	}
+    printf("Annual Revenue for Year %d: %sRM %s%s\n\n",
+           firstForecastYear - 1, MAGENTA,
+           formatWithCommas(latestAnnualRevenue, 2).c_str(), RESET);
 
-	printf("\n%-12s", "OpenMP");
-	for (int y = 0; y < FORECAST_YEARS; ++y) {
-		printf(" | RM %s%16s%s", BLUE, formatWithCommas(parallelResult.meanRevenue[y]).c_str(), RESET);
-	}
+    printf("Annual Growth Rate: %s%.4f%%%s\n",
+           LIME, annualGrowthRate * 100.0, RESET);
+    printf("Annual Volatility Rate: %s%.4f%%%s\n",
+           LIME, annualVolatilityRate * 100.0, RESET);
+    printf("Number of Simulations: %s%d%s\n\n", LIME, steps, RESET);
 
-	double speedup = Ts / Tp;
-	double efficiency = speedup / threadsUsed;
+    printf("Forecasted Revenues\n");
+    printf("Assumption: constant growth and uncertainty parameters.\n\n");
 
-	printf("\n\nPerformance Comparison\n");
-	printf("-----------------------------------\n");
-	printf("Simulations: %d\n", steps);
-	printf("OpenMP threads: %d\n", threadsUsed);
-	printf("\nTs: %s%.6f seconds%s\n", ORANGE, Ts, RESET);
-	printf("Tp: %s%.6f seconds%s\n", ORANGE, Tp, RESET);
-	printf("Speedup: %s%.4f%s\n", LIME, speedup, RESET);
-	printf("Efficiency: %s%.2f%%%s\n", LIME, efficiency * 100.0, RESET);
+    printf("%-11s", "Method");
+    for (int y = 0; y < FORECAST_YEARS; ++y) {
+        printf("| Year %-11d", firstForecastYear + y);
+    }
 
-	printf("Press Enter to Continue...\n");
-	int ch;
-	while ((ch = getchar()) != '\n' && ch != EOF) {}
-	getchar();
-	flush();
+    printf("\n%s\n", std::string(11 + 18 * FORECAST_YEARS, '-').c_str());
+    printRow("Sequential", sequentialResult);
+    printRow("OpenMP", parallelResult);
+
+    printf("\nPerformance Comparison\n");
+    printf("----------------------------------------\n");
+    printf("Simulations (Steps): %d\n", steps);
+    printf("Forecast years per scenario: %d\n", FORECAST_YEARS);
+    printf("OpenMP threads: %d\n\n", threadsUsed);
+
+    printf("Ts: %s%.6f seconds%s\n", ORANGE, Ts, RESET);
+    printf("Tp: %s%.6f seconds%s\n", ORANGE, Tp, RESET);
+
+    if (Tp > 0.0) {
+        double speedup = Ts / Tp;
+        double efficiency = speedup / static_cast<double>(threadsUsed);
+
+        printf("Speedup: %s%.4f%s\n", LIME, speedup, RESET);
+        printf("Efficiency: %s%.2f%%%s\n", LIME, efficiency * 100.0, RESET);
+    }
+    else {
+        printf("Runtime is too small to calculate speedup reliably.\n");
+    }
+
+    printf("\nPress Enter to continue...");
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF) {}  // discard leftover Enter from scanf_s
+    getchar();                                        // wait for a real key press
+    flush();
 }
